@@ -1,0 +1,25 @@
+<h1>Projects</h1>
+
+<form action="">
+    <%= select_tag :state, options_for_select(["Proposal", "In Progress", "Finished"]) %>
+    <input type="submit" value="Buscar">
+</form>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Fecha de inicio</th>
+        <th>Fecha de término</th>
+        <th>Estado</th>
+    </tr>
+    <% @projects.each do |project| %>
+    <tr>
+        <td><%= project.name %></td>
+        <td><%= project.description %></td>
+        <td><%= project.start_date %></td>
+        <td><%= project.end_date %></td>
+        <td><%= project.state %></td>
+    </tr>
+    <% end %>
+</table>
